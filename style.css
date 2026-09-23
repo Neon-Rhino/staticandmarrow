@@ -1,0 +1,360 @@
+/* Static and Marrow — shared site styles
+   Accent color pulled loosely from Kurt's cyan-blue eyes on the cover.
+   Swap --accent / --bg-charcoal / --bg-charcoal-deep once final cover
+   palette values are pulled, per the layout brief. */
+
+:root {
+  --bg-charcoal: #16181a;
+  --bg-charcoal-deep: #0c0d0e;
+  --bone: #e6e1d6;
+  --bone-dim: #a8a39a;
+  --accent: #3fd0e0;
+  --accent-dim: #2a9aa8;
+  --max-width: 760px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-charcoal-deep);
+  /* Placeholder background treatment until the purpose-built wide
+     background image is generated (see layout brief — Open/Deferred).
+     Replace this gradient with:
+       background-image: url('assets/bg-home-wide.jpg');
+       background-size: cover;
+       background-position: center;
+     and add a matching assets/bg-home-mobile.jpg swapped in via the
+     media query near the bottom of this file. */
+  background-image:
+    radial-gradient(ellipse at center, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0) 60%),
+    linear-gradient(120deg, var(--bg-charcoal) 0%, var(--bg-charcoal-deep) 45%, var(--bg-charcoal-deep) 55%, var(--bg-charcoal) 100%);
+  background-attachment: fixed;
+  color: var(--bone);
+  font-family: 'Georgia', 'Iowan Old Style', serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+a:hover, a:focus {
+  border-bottom-color: var(--accent);
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+
+.site-nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-nav a {
+  color: var(--bone-dim);
+  margin-left: 1.5rem;
+  border-bottom: 1px solid transparent;
+}
+
+.site-nav a:hover, .site-nav a.active {
+  color: var(--accent);
+}
+
+h1.title-bar {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: var(--bone);
+  text-align: center;
+  margin: 0 0 3rem;
+}
+
+.hook {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--bone-dim);
+  font-style: italic;
+  max-width: 520px;
+  margin: 0 auto 3.5rem;
+}
+
+.cover-wrap {
+  text-align: center;
+  margin: 0 auto 3.5rem;
+}
+
+.cover-wrap img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cover-wrap a:hover img {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 70px rgba(63,208,224,0.18);
+}
+
+.cover-caption {
+  margin-top: 0.9rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+}
+
+section.about h2, section.lore-section h2 {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  color: var(--accent);
+  border-bottom: 1px solid rgba(63,208,224,0.25);
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+section.about p {
+  color: var(--bone-dim);
+}
+
+footer.site-footer {
+  text-align: center;
+  padding: 2rem 1.5rem 3rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--bone-dim);
+  opacity: 0.6;
+}
+
+/* ---- Lore / Blog / Wiki page ---- */
+
+.lore-nav {
+  max-width: var(--max-width);
+  margin: 0 auto 3rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.lore-nav a {
+  color: var(--bone-dim);
+  padding-bottom: 0.3rem;
+}
+
+.lore-nav a:hover {
+  color: var(--accent);
+}
+
+section.lore-section {
+  margin-bottom: 4.5rem;
+}
+
+.blog-entry {
+  margin-bottom: 2.2rem;
+  padding-bottom: 2.2rem;
+  border-bottom: 1px solid rgba(230,225,214,0.08);
+}
+
+.blog-entry:last-child {
+  border-bottom: none;
+}
+
+.blog-date {
+  display: block;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-dim);
+  margin-bottom: 0.4rem;
+}
+
+.character-card {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(230,225,214,0.08);
+  border-radius: 2px;
+}
+
+.character-card h3 {
+  margin-top: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 0.04em;
+  color: var(--bone);
+}
+
+.spoiler-note {
+  display: inline-block;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-dim);
+  border: 1px solid var(--accent-dim);
+  border-radius: 2px;
+  padding: 0.15rem 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.reading-order-note {
+  font-size: 0.85rem;
+  color: var(--bone-dim);
+  font-style: italic;
+}
+
+/* ---- World lore entries ---- */
+
+.lore-entry {
+  margin-bottom: 2rem;
+}
+
+.lore-entry h3 {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: var(--bone);
+  margin: 0 0 0.5rem;
+}
+
+.lore-entry p {
+  margin: 0;
+}
+
+/* ---- Character dossier files ---- */
+
+.dossier-intro {
+  font-style: italic;
+  color: var(--bone-dim);
+  margin: 0 0 2rem;
+}
+
+.dossier-tab {
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bg-charcoal-deep);
+  background: var(--bone-dim);
+  padding: 0.15rem 0.6rem;
+  margin-bottom: 0.9rem;
+  border-radius: 1px;
+}
+
+.dossier-fields {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35rem 1.2rem;
+  margin: 0 0 1.2rem;
+  padding: 0.9rem 0;
+  border-top: 1px dashed rgba(230,225,214,0.15);
+  border-bottom: 1px dashed rgba(230,225,214,0.15);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+}
+
+.dossier-fields dt {
+  color: var(--accent-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+  padding-top: 0.1rem;
+}
+
+.dossier-fields dd {
+  margin: 0;
+  color: var(--bone);
+}
+
+.dossier-fields dd.redacted {
+  background: #f2efe8;
+  color: var(--bg-charcoal-deep);
+  width: fit-content;
+  padding: 0 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  align-self: center;
+  border-radius: 1px;
+}
+
+.field-notes p {
+  color: var(--bone-dim);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .dossier-fields {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+  .dossier-fields dd {
+    margin-bottom: 0.6rem;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    /* Placeholder mobile treatment — swap for the dedicated vertical
+       background crop once produced (see layout brief). */
+    background-image:
+      radial-gradient(ellipse at center, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0) 70%),
+      linear-gradient(180deg, var(--bg-charcoal) 0%, var(--bg-charcoal-deep) 50%, var(--bg-charcoal) 100%);
+  }
+
+  .site-nav {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+
+  .site-nav a {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+
+  h1.title-bar {
+    font-size: 1.5rem;
+  }
+
+  .wrap {
+    padding: 2.5rem 1.25rem 4rem;
+  }
+}

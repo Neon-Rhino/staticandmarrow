@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Static and Marrow</title>
+<meta name="description" content="Static and Marrow — a post-apocalyptic sci-fi novel about what's left of us, and what's left in charge, after everything falls apart.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <span>Static and Marrow</span>
+  <div>
+    <a href="index.html" class="active">Home</a>
+    <a href="lore.html">Lore &amp; Dispatches</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <h1 class="title-bar">Static and Marrow</h1>
+
+  <p class="hook">
+    <!-- Hook: short, punchy, genre/premise — not personal. Refine wording as needed. -->
+    The world ended. The machines kept thinking. What's left of humanity is learning
+    to live in the space between static and marrow.
+  </p>
+
+  <div class="cover-wrap">
+    <!-- Book cover: replace src with the final cover image once it's added to /assets.
+         The cover itself is the CTA — no separate buy button needed. -->
+    <a href="REPLACE_WITH_AMAZON_KDP_LINK" target="_blank" rel="noopener">
+      <img src="assets/cover.jpg" alt="Static and Marrow book cover">
+    </a>
+    <div class="cover-caption">Available on Amazon</div>
+  </div>
+
+  <section class="about">
+    <h2>About the Author</h2>
+    <p>
+      Growing up on the Terminator movies, the wasteland of Mad Max, and the quiet
+      bleakness of A Boy and His Dog, I've always been drawn to worlds that have
+      broken and kept going anyway. Static and Marrow grew out of that same
+      fascination: what's left of us, and what's left in charge, after everything
+      falls apart.
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  &copy; <span id="year"></span> Static and Marrow
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
